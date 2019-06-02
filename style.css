@@ -1,0 +1,186 @@
+@import url(//fonts.googleapis.com/css?family=Work+Sans:400);
+
+body {
+  font-family: Work Sans;
+  font-size: 26px;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #000000;
+  /* some space for header */
+  padding-top: 104px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+/*   overflow: hidden; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 20px;
+
+  z-index: 2;
+}
+
+header h1 {
+/*   float: left; */
+  width: 56px;
+}
+
+header nav a {
+  margin-left: 10px;
+  border-bottom: solid 2px rgba(0,0,0,0);
+  padding-bottom: 3px;
+
+  transition: border 0.4s ease-in;
+}
+
+header nav a:hover {
+  border-color: #555;
+}
+
+header nav a.selected {
+  border-color: #fff;
+}
+
+.foto {
+/*   display: inline-block; */
+  width: 301px;
+  margin: 9px;
+  vertical-align: middle;
+
+/*   PARENT, by using position:relative on our parent element, our child element, overlay, will be positioned in relation to it*/
+  position: relative;
+}
+
+.foto h2 {
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.overlay {
+/*   CHILD , by using position: absolute you can position elements in relation to the page or other elements*/
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0;
+
+  transition: opacity 0.4s;
+  z-index: 2;
+}
+
+.foto:hover .overlay {
+  opacity: 1;
+}
+
+
+.foto:hover img {
+  filter: grayscale(1);
+}
+
+.foto img {
+ 	transition: filter 0.4s;
+}
+
+.fotos {
+/*   text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.small {
+  width: 250px;
+}
+
+.large {
+  width: 400px;
+}
+
+.xl {
+  width: 464px;
+}
+
+
+footer{
+  padding: 20px;
+  padding-top: 0px;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer nav a {
+  width: 26px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.list {
+ max-width: 640px;
+ margin-left: auto;
+ margin-right: auto;
+ font-size: 48px;
+ line-height: 1.2;
+ padding-bottom: 0px;
+ min-height: calc(100vh - 170px);
+}
+
+.list a img {
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+/*  ignore mouse interaction on element  */
+  pointer-events: none;
+
+  transition: opacity 0.4s;
+}
+
+.list a:after {
+  content: "/";
+}
+
+.list a:last-child:after {
+  content: "";
+}
+
+.list a:hover img {
+  opacity: 1;
+}
+
+.info {
+ max-width: 640px;
+ margin-left: auto;
+ margin-right: auto;
+ font-size: 42px;
+ line-height: 1.2;
+ padding-bottom: 0px;
+ min-height: calc(100vh - 170px);
+}
